@@ -1,0 +1,220 @@
+* {
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  background: rgba(158, 158, 158, 0.2);
+  border-radius: 12px;
+}
+
+body {
+  /* background-color: black; */
+  display: flex;
+  background-image: url("https://img.freepik.com/free-photo/free-photo-black-grunge-abstract-background-pattern-wallpaper_1340-33904.jpg?t=st=1689332620~exp=1689336220~hmac=acb8ae2e5939e05a549cb1e30a450f1c77b6146e91d0476585d04cfd060125b1&w=996");
+  background-size: cover;
+  background-attachment: fixed;
+  color: whitesmoke;
+  font-family: monospace;
+  max-width: 100%;
+  padding: 0;
+  text-align: center;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+section {
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.Profilepic {
+  max-width: 50%;
+  height: auto;
+  border-radius: 10%;
+
+  padding: 1rem;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border-radius: 18px;
+}
+
+.aboutcontentright {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%;
+  align-items: center;
+  align-content: center;
+  padding-right: 10%;
+  text-align: justify;
+}
+
+.aboutcontentleft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%;
+  align-items: center;
+  align-content: center;
+  padding-left: 10%;
+  text-align: justify;
+}
+
+/* timeline */
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: black;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #ff9f55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+
+blockquote {
+  display: flex;
+
+  margin: 0, auto;
+}
+
+blockquote p {
+  padding: 15px;
+  color: black;
+  background: #eee;
+  border-radius: 5px;
+}
+
+blockquote p::before {
+  content: "\201C";
+}
+
+blockquote p::after {
+  content: "\201D";
+}
