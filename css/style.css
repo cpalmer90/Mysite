@@ -13,7 +13,7 @@ main {
 body {
   /* background-color: black; */
   display: flex;
-  background-image: url("https://img.freepik.com/free-photo/free-photo-black-grunge-abstract-background-pattern-wallpaper_1340-33904.jpg?t=st=1689332620~exp=1689336220~hmac=acb8ae2e5939e05a549cb1e30a450f1c77b6146e91d0476585d04cfd060125b1&w=996");
+  background-color: black;
   background-size: cover;
   background-attachment: fixed;
   color: whitesmoke;
